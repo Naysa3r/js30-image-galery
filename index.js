@@ -1,4 +1,4 @@
-const url = 'https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
+let url = 'https://api.unsplash.com/search/photos?query=nature&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
 const parent = document.getElementById('grid');
 
 function showData(data) {
@@ -18,5 +18,10 @@ async function getData() {
 
 }
 
-getData();
+function search(query) {
+    if(event.key === 'Enter') {
+        url = `https://api.unsplash.com/search/photos?query=${query.value}&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
+        getData();
+    }
+}
 
