@@ -1,5 +1,7 @@
 let url = 'https://api.unsplash.com/search/photos?query=nature&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
 const parent = document.getElementById('grid');
+const searchBtn = document.getElementById('search');
+const input = document.getElementById('input');
 getData();
 
 function showData(data) {
@@ -11,7 +13,7 @@ function showData(data) {
 
 function removeData() {
     let images = document.getElementsByClassName('img');
-    console.log(images.length);
+    // console.log(images.length);
     while (images.length != 0){
         images[0].parentNode.removeChild(images[0]);
     }
@@ -33,14 +35,18 @@ async function getData() {
 
 }
 
+searchBtn.addEventListener('click', function (event) {
+    find(input);
+});
+
 function search(query) {
     if(event.key === 'Enter') {
-        
-        removeData();
-        url = `https://api.unsplash.com/search/photos?query=${query.value}&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
-        getData(); 
-
+        find(query);
     }
 }
 
-
+function find(query) {
+    removeData();
+    url = `https://api.unsplash.com/search/photos?query=${query.value}&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
+    getData();
+}
