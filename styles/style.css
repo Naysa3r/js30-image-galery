@@ -29,6 +29,9 @@ header {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
+.fa-search {
+  margin: 0 20px;
+}
 .fa-camera:before {
     content:"\f030"
    }
@@ -93,15 +96,59 @@ input:focus {
 .img {
   width: 380px;
   height: 214px;
-  margin-top: 15px;
+  margin: 15px 0;
   background-position: center;
   background-size: cover;
   border-radius: 2px;
   cursor: pointer;
 }
 
+footer {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 70px;
+  padding: 0 20px;
+}
+.footer-data-element {
+  font-family: 'Comfortaa', cursive;
+  color: orange;
+  font-size: 2rem;
+  transition: color 0.3s;
+}
+.footer-gh {
+  color: #FFF;
+  text-decoration: none;
+}
+.footer-gh:hover {
+  color: orange;
+}
+.footer-link-item {
+  color:#FFF; 
+  font-size: 22px;
+  display: inline-block;
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(228deg) brightness(106%) contrast(100%);
+  background-image: url(../assets/svg/rs_school_js.svg);
+  background-size: cover;
+  height: 1.7em;
+  width: 4.7em;
+  align-self: center;
+}
+.footer-link-item:hover {
+  filter: invert(69%) sepia(38%) saturate(4114%) hue-rotate(0deg) brightness(104%) contrast(104%);
+}
+
 @media(max-width:1280px) {
   .container {
+    width: 100%;
+  }
+  footer {
     width: 100%;
   }
 }

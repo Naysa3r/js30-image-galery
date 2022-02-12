@@ -1,8 +1,17 @@
-let url = 'https://api.unsplash.com/search/photos?query=nature&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
+let url = 'https://api.unsplash.com/search/photos?query=nature&per_page=30&orientation=landscape&client_id=MDoGd6F8J5kOZiqQAttb2VkNC6sxq_O9itoiLW-FIQQ';
 const parent = document.getElementById('grid');
 const searchBtn = document.getElementById('search');
+const clearBtn = document.getElementById('cancel');
 const input = document.getElementById('input');
 getData();
+
+
+clearBtn.addEventListener('click', function (event) {
+    clearInput();
+});
+function clearInput() {
+    input.value = '';
+}
 
 function showData(data) {
     const el = document.createElement('div');
@@ -47,6 +56,6 @@ function search(query) {
 
 function find(query) {
     removeData();
-    url = `https://api.unsplash.com/search/photos?query=${query.value}&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
+    url = `https://api.unsplash.com/search/photos?query=${query.value}&per_page=30&orientation=landscape&client_id=MDoGd6F8J5kOZiqQAttb2VkNC6sxq_O9itoiLW-FIQQ`;
     getData();
 }
